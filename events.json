@@ -1,1 +1,37 @@
-
+[
+  {
+    "date": "2026-08-20",
+    "title": "Council / Transition Meeting",
+    "time": "7:00 PM",
+    "details": "via Zoom",
+    "type": "meeting"
+  },
+  {
+    "date": "2026-08-22",
+    "title": "Peace Lutheran Picnic Dinner",
+    "time": "3:00 PM - 6:00 PM",
+    "details": "",
+    "type": "community"
+  },
+  {
+    "date": "2026-08-30",
+    "title": "Emmaus Road Bible Study",
+    "time": "Following worship",
+    "details": "",
+    "type": "study"
+  },
+  {
+    "date": "2026-08-30",
+    "title": "A Wing & a Prayer / Bristol Band Concert",
+    "time": "2:00 PM",
+    "details": "",
+    "type": "community"
+  },
+  {
+    "date": "2026-09-13",
+    "title": "God's Work, Our Hands Project",
+    "time": "",
+    "details": "",
+    "type": "service"
+  }
+]
