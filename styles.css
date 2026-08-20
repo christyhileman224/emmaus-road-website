@@ -1,0 +1,788 @@
+/* =========================================================
+   EMMAUS ROAD
+   Main Website Styles
+   ========================================================= */
+
+
+/* ---------- COLORS ---------- */
+
+:root {
+    --green-dark: #123d29;
+    --green-deep: #0b2f20;
+    --green: #2f7a3e;
+    --green-light: #79b85d;
+
+    --cream: #f7f5ef;
+    --white: #ffffff;
+
+    --text: #252a27;
+    --muted: #68706b;
+
+    --shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ---------- BASIC PAGE SETUP ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.65;
+    font-size: 16px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER & NAVIGATION
+   ========================================================= */
+
+header {
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav {
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+
+/* Temporary text logo.
+   We can replace this with the real logo later. */
+
+.brand {
+    color: var(--green-dark);
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+.brand-cross {
+    font-size: 34px;
+    vertical-align: -3px;
+}
+
+
+/* Desktop navigation */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 29px;
+}
+
+nav a {
+    color: var(--green-dark);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+
+/* Give button */
+
+nav .give {
+    background: var(--green);
+    color: var(--white);
+
+    padding: 11px 20px;
+
+    border-radius: 6px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+nav .give:hover {
+    background: #256633;
+    color: white;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 625px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 32, 21, 0.94) 0%,
+            rgba(5, 32, 21, 0.78) 31%,
+            rgba(5, 32, 21, 0.34) 55%,
+            rgba(5, 32, 21, 0.08) 80%
+        ),
+        url("front.jpg");
+
+    background-size: cover;
+
+    /* Adjust this later if we want to move the church
+       left or right inside the hero image. */
+    background-position: center 48%;
+}
+
+.hero-content {
+    max-width: 650px;
+
+    color: white;
+
+    padding:
+        100px 0
+        165px;
+}
+
+.hero h1 {
+    margin: 0 0 28px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(54px, 6vw, 80px);
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.22);
+}
+
+.mission {
+    max-width: 590px;
+
+    margin-bottom: 38px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(22px, 2.2vw, 29px);
+    line-height: 1.45;
+
+    font-style: italic;
+
+    color: #9ed378;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.button {
+    display: inline-block;
+
+    background: var(--green);
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 0.25px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.button:hover {
+    background: #256633;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   QUICK INFORMATION CARDS
+   ========================================================= */
+
+.quick-info {
+    position: relative;
+
+    margin-top: -90px;
+
+    z-index: 20;
+}
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+.info-card {
+    min-height: 205px;
+
+    padding: 35px 38px;
+}
+
+.info-card + .info-card {
+    border-left: 1px solid #dddddd;
+}
+
+.info-icon {
+    color: var(--green);
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    margin-bottom: 16px;
+}
+
+.info-card h3 {
+    margin: 0 0 7px;
+
+    color: var(--green-dark);
+
+    font-size: 16px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3px;
+}
+
+.info-card strong {
+    font-size: 20px;
+}
+
+.info-card p {
+    margin: 5px 0;
+}
+
+.text-link {
+    color: var(--green);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.section {
+    padding: 95px 0;
+}
+
+.section-title {
+    margin: 0 0 25px;
+
+    color: var(--green-dark);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(36px, 4vw, 48px);
+
+    line-height: 1.12;
+}
+
+
+/* =========================================================
+   WELCOME SECTION
+   ========================================================= */
+
+.welcome-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 0.8fr;
+
+    gap: 95px;
+
+    align-items: center;
+}
+
+.welcome-text p {
+    max-width: 650px;
+
+    font-size: 18px;
+}
+
+.welcome-grid h3 {
+    color: var(--green-dark);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+}
+
+
+/* =========================================================
+   CONGREGATION PHOTO
+   ========================================================= */
+
+.people {
+    min-height: 540px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 30, 18, 0.97) 0%,
+            rgba(10, 30, 18, 0.83) 28%,
+            rgba(10, 30, 18, 0.35) 48%,
+            rgba(10, 30, 18, 0.03) 75%
+        ),
+        url("group.jpg");
+
+    background-size: cover;
+
+    /*
+       Keeping more of the congregation visible.
+    */
+    background-position: center center;
+}
+
+.people-content {
+    max-width: 440px;
+
+    padding: 85px 0;
+}
+
+.people h2 {
+    margin: 0 0 22px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(44px, 5vw, 64px);
+
+    line-height: 1.02;
+
+    letter-spacing: -1px;
+}
+
+.people p {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   THIS WEEK / NEWSLETTER
+   ========================================================= */
+
+.week {
+    background: white;
+}
+
+.week-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 75px;
+}
+
+.week-block {
+    padding: 12px 0;
+}
+
+.week-block + .week-block {
+    border-left: 1px solid #dddddd;
+
+    padding-left: 75px;
+}
+
+.week h3 {
+    margin-top: 0;
+
+    color: var(--green-dark);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 26px;
+}
+
+.week p {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   VISIT
+   ========================================================= */
+
+.visit {
+    text-align: center;
+
+    background: var(--cream);
+}
+
+.visit p {
+    max-width: 720px;
+
+    margin:
+        0 auto
+        30px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: var(--green-dark);
+
+    color: white;
+
+    padding:
+        65px 0
+        28px;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.25fr 0.8fr 1.25fr;
+
+    gap: 75px;
+}
+
+footer h3 {
+    margin-top: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+}
+
+footer h4 {
+    margin-top: 0;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+}
+
+footer p {
+    color: rgba(255,255,255,0.9);
+}
+
+footer a {
+    color: white;
+}
+
+.footer-links a {
+    display: block;
+
+    margin: 6px 0;
+
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 50px;
+
+    padding-top: 22px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.22);
+
+    font-size: 13px;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .nav {
+        gap: 20px;
+    }
+
+    nav {
+        gap: 17px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .welcome-grid {
+        gap: 55px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .container {
+        width: min(92%, 680px);
+    }
+
+
+    /* Header */
+
+    header {
+        position: relative;
+    }
+
+    .nav {
+        flex-direction: column;
+
+        padding:
+            18px 0
+            20px;
+
+        gap: 14px;
+    }
+
+    .brand {
+        font-size: 23px;
+    }
+
+    nav {
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap:
+            10px
+            17px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 630px;
+
+        background-position:
+            58% center;
+    }
+
+    .hero-content {
+        padding:
+            80px 0
+            150px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 14vw, 65px);
+    }
+
+    .mission {
+        font-size: 21px;
+    }
+
+
+    /* Quick cards */
+
+    .quick-info {
+        margin-top: -75px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        min-height: auto;
+
+        padding: 27px 30px;
+    }
+
+    .info-card + .info-card {
+        border-left: 0;
+
+        border-top:
+            1px solid
+            #dddddd;
+    }
+
+
+    /* Main sections */
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .welcome-grid,
+    .week-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-grid {
+        gap: 35px;
+    }
+
+
+    /* Congregation */
+
+    .people {
+        min-height: 610px;
+
+        background-position:
+            62% center;
+    }
+
+    .people-content {
+        max-width: 340px;
+    }
+
+
+    /* Newsletter */
+
+    .week-grid {
+        gap: 35px;
+    }
+
+    .week-block + .week-block {
+        border-left: 0;
+
+        border-top:
+            1px solid
+            #dddddd;
+
+        padding-left: 0;
+
+        padding-top: 35px;
+    }
+
+
+    /* Footer */
+
+    .footer-grid {
+        gap: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .mission {
+        font-size: 19px;
+    }
+
+    .section-title {
+        font-size: 35px;
+    }
+
+    .people h2 {
+        font-size: 44px;
+    }
+
+}
