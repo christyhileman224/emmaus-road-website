@@ -294,13 +294,24 @@ nav .give:hover {
 }
 
 .info-icon {
-    color: var(--green);
+    width: 58px;
+    height: 58px;
 
-    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    background: var(--green-dark);
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 27px;
     line-height: 1;
 
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+
+    flex-shrink: 0;
 }
 
 .info-card h3 {
