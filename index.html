@@ -1,55 +1,768 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emmaus Road</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f7f2;
-      color: #183d2b;
-      text-align: center;
+<title>Emmaus Road | Levittown, PA</title>
+
+<meta name="description"
+content="Emmaus Road is a grateful faith community in Levittown, Pennsylvania, seeking to love, learn and serve together. Join us Sunday at 10:00 AM.">
+
+<style>
+
+:root {
+    --green-dark: #123d29;
+    --green: #2f7a3e;
+    --green-light: #6ea65b;
+    --cream: #f7f5ef;
+    --white: #ffffff;
+    --text: #252a27;
+    --muted: #68706b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+
+/* HEADER */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 8px rgba(0,0,0,.08);
+}
+
+.nav {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand {
+    text-decoration: none;
+    color: var(--green-dark);
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: .5px;
+}
+
+.brand-cross {
+    font-size: 32px;
+    vertical-align: -3px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--green-dark);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.give {
+    background: var(--green);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 610px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,32,21,.92) 0%,
+            rgba(5,32,21,.72) 34%,
+            rgba(5,32,21,.20) 65%,
+            rgba(5,32,21,.05) 100%
+        ),
+        url("front.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    color: white;
+    max-width: 600px;
+    padding: 90px 0 145px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 7vw, 78px);
+    line-height: .98;
+    margin: 0 0 28px;
+    letter-spacing: -2px;
+}
+
+.mission {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(21px, 2.3vw, 29px);
+    line-height: 1.45;
+    font-style: italic;
+    color: #a4d27d;
+    max-width: 570px;
+    margin-bottom: 34px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #256633;
+}
+
+
+/* INFO CARDS */
+
+.quick-info {
+    position: relative;
+    margin-top: -85px;
+    z-index: 10;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,.12);
+}
+
+.info-card {
+    padding: 32px;
+    min-height: 190px;
+}
+
+.info-card + .info-card {
+    border-left: 1px solid #ddd;
+}
+
+.info-icon {
+    font-size: 31px;
+    margin-bottom: 8px;
+}
+
+.info-card h3 {
+    color: var(--green-dark);
+    margin: 0 0 5px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.info-card strong {
+    font-size: 20px;
+}
+
+.info-card p {
+    margin: 4px 0;
+}
+
+.text-link {
+    color: var(--green);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* WELCOME */
+
+.section {
+    padding: 85px 0;
+}
+
+.section-title {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--green-dark);
+    font-size: clamp(34px, 4vw, 46px);
+    margin: 0 0 22px;
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.welcome-text p {
+    font-size: 18px;
+}
+
+
+/* CONGREGATION */
+
+.people {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(14,32,20,.95) 0%,
+            rgba(14,32,20,.78) 32%,
+            rgba(14,32,20,.10) 70%
+        ),
+        url("group.jpg") center/cover no-repeat;
+}
+
+.people-content {
+    max-width: 430px;
+    padding: 70px 0;
+}
+
+.people h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 60px);
+    line-height: 1.05;
+    margin: 0 0 20px;
+}
+
+.people p {
+    font-size: 18px;
+}
+
+
+/* THIS WEEK */
+
+.week {
+    background: white;
+}
+
+.week-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.week-block {
+    padding: 10px 0;
+}
+
+.week-block + .week-block {
+    border-left: 1px solid #ddd;
+    padding-left: 70px;
+}
+
+.week h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--green-dark);
+    font-size: 24px;
+}
+
+
+/* VISIT */
+
+.visit {
+    text-align: center;
+}
+
+.visit p {
+    max-width: 680px;
+    margin: 0 auto 25px;
+    font-size: 18px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: var(--green-dark);
+    color: white;
+    padding: 55px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.3fr;
+    gap: 60px;
+}
+
+footer h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+footer h4 {
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+footer a {
+    color: white;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.copyright {
+    margin-top: 45px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.25);
+    font-size: 13px;
+    opacity: .8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .nav {
+        flex-direction: column;
+        padding: 18px 0;
     }
 
-    main {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px 20px;
     }
 
-    h1 {
-      font-family: Georgia, serif;
-      font-size: 56px;
-      margin-bottom: 15px;
+    .hero {
+        min-height: 650px;
+        background-position: 60% center;
     }
 
-    p {
-      font-family: Georgia, serif;
-      font-size: 24px;
-      font-style: italic;
-      line-height: 1.5;
-      max-width: 750px;
+    .hero-content {
+        padding: 80px 0 150px;
     }
-  </style>
+
+    .info-grid,
+    .welcome-grid,
+    .week-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card + .info-card {
+        border-left: 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .week-block + .week-block {
+        border-left: 0;
+        border-top: 1px solid #ddd;
+        padding-left: 0;
+        padding-top: 35px;
+    }
+
+    .people {
+        background-position: 60% center;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <main>
-    <div>
-      <h1>Welcome to Emmaus Road</h1>
 
-      <p>
-        Transformed by God's grace, we are a grateful faith community
-        seeking to love, learn and serve together.
-      </p>
+<!-- NAVIGATION -->
+
+<header>
+    <div class="container nav">
+
+        <a class="brand" href="#">
+            EMMAUS ROAD <span class="brand-cross">†</span>
+        </a>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#visit">Visit</a>
+            <a href="#ministries">Ministries</a>
+            <a href="#week">Newsletter</a>
+            <a href="#contact">Contact</a>
+
+            <!-- Replace # with the giving-app URL -->
+            <a class="give" href="#">Give</a>
+        </nav>
+
     </div>
-  </main>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <h1>
+                Welcome to<br>
+                Emmaus Road
+            </h1>
+
+            <div class="mission">
+                Transformed by God's grace, we are a grateful faith
+                community seeking to love, learn and serve together.
+            </div>
+
+            <a class="button" href="#visit">
+                Join Us Sunday →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUICK INFORMATION -->
+
+<section class="quick-info">
+
+    <div class="container info-grid">
+
+        <div class="info-card">
+            <div class="info-icon">◷</div>
+            <h3>Sunday Worship</h3>
+            <strong>10:00 AM</strong>
+            <p>Everyone is welcome.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">⌖</div>
+            <h3>Where We Meet</h3>
+
+            <p>
+                2185 Bristol Oxford Valley Rd<br>
+                Levittown, PA 19057
+            </p>
+
+            <a
+                class="text-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.google.com/maps/search/?api=1&query=2185+Bristol+Oxford+Valley+Rd+Levittown+PA+19057">
+                Get Directions →
+            </a>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">♡</div>
+            <h3>Come As You Are</h3>
+            <p>
+                A welcoming faith community.<br>
+                Worship, fellowship and service.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WELCOME -->
+
+<section class="section" id="about">
+
+    <div class="container welcome-grid">
+
+        <div class="welcome-text">
+
+            <h2 class="section-title">
+                Welcome to Emmaus Road
+            </h2>
+
+            <p>
+                We are a faith community in Levittown, Pennsylvania,
+                walking together as we seek to love God, learn together
+                and serve our neighbors.
+            </p>
+
+            <p>
+                Whether you've been part of a church your whole life,
+                haven't been in years, or are simply curious, there is
+                a place for you here.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3 style="color:#123d29;font-family:Georgia,serif;font-size:28px;">
+                Sunday Worship
+            </h3>
+
+            <p>
+                <strong>10:00 AM</strong><br>
+                2185 Bristol Oxford Valley Rd<br>
+                Levittown, PA 19057
+            </p>
+
+            <a class="button" href="#visit">
+                Plan Your Visit
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PEOPLE -->
+
+<section class="people">
+
+    <div class="container">
+
+        <div class="people-content">
+
+            <h2>
+                There's a place<br>
+                for you here.
+            </h2>
+
+            <p>
+                We are a church family of all ages, walking together
+                in faith and serving together in love.
+            </p>
+
+            <a class="button" href="#about">
+                Learn More About Us →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- THIS WEEK -->
+
+<section class="section week" id="week">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            This Week at Emmaus Road
+        </h2>
+
+        <div class="week-grid">
+
+            <div class="week-block">
+
+                <h3>Weekly Newsletter</h3>
+
+                <p>
+                    Stay connected with worship information,
+                    announcements, prayers and what's happening
+                    in the life of Emmaus Road.
+                </p>
+
+                <p>
+                    Our weekly newsletter keeps our congregation
+                    connected throughout the week.
+                </p>
+
+                <!-- Newsletter link will be added later -->
+                <a class="button" href="#">
+                    Read the Newsletter
+                </a>
+
+            </div>
+
+
+            <div class="week-block">
+
+                <h3>Prayer & Scripture</h3>
+
+                <p>
+                    <em>
+                        “The Lord is my light and my salvation;
+                        whom shall I fear?”
+                    </em>
+                </p>
+
+                <p>
+                    <strong>Psalm 27:1</strong>
+                </p>
+
+                <p>
+                    Join us as we pray together, encourage one another,
+                    and trust God's guidance for the road ahead.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VISIT -->
+
+<section class="section visit" id="visit">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            We'd Love to Welcome You
+        </h2>
+
+        <p>
+            Join us for worship Sunday at 10:00 AM.
+            Emmaus Road is located at 2185 Bristol Oxford Valley Rd
+            in Levittown, Pennsylvania.
+        </p>
+
+        <a
+            class="button"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.google.com/maps/search/?api=1&query=2185+Bristol+Oxford+Valley+Rd+Levittown+PA+19057">
+            Get Directions
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>EMMAUS ROAD †</h3>
+
+                <p>
+                    Transformed by God's grace, we are a grateful
+                    faith community seeking to love, learn and
+                    serve together.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Quick Links</h4>
+
+                <a href="#about">About Us</a>
+                <a href="#visit">Visit</a>
+                <a href="#week">Newsletter</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Contact Us</h4>
+
+                <p>
+                    2185 Bristol Oxford Valley Rd<br>
+                    Levittown, PA 19057
+                </p>
+
+                <p>
+                    <a href="tel:+12159462155">
+                        (215) 946-2155
+                    </a>
+                </p>
+
+                <p>
+                    <a href="mailto:emmausroadoffice@gmail.com">
+                        emmausroadoffice@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Sunday Worship:</strong> 10:00 AM
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Emmaus Road. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
 
 </body>
 </html>
