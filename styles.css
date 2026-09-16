@@ -501,7 +501,56 @@ nav .give:hover {
     font-size: 17px;
 }
 
+/* =========================================================
+   THIS WEEK - SCRIPTURE BLOCK
+   ========================================================= */
 
+#homepage-scripture-excerpt {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--text);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+#homepage-scripture {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: var(--green-dark);
+
+    font-size: 18px;
+}
+
+#homepage-theme {
+    margin:
+        8px 0
+        24px;
+
+    color: var(--green-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.week-block p {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
 /* =========================================================
    VISIT
    ========================================================= */
