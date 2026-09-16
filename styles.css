@@ -773,7 +773,34 @@ footer a {
         0 5px 20px
         rgba(0, 0, 0, 0.06);
 }
+/* Footer logo */
 
+.footer-logo {
+    display: inline-block;
+
+    background: white;
+
+    padding: 10px 14px;
+
+    border-radius: 6px;
+
+    margin-bottom: 16px;
+}
+
+.footer-logo img {
+    display: block;
+
+    width: 220px;
+    max-width: 100%;
+
+    height: auto;
+}
+
+.footer-brand p {
+    max-width: 350px;
+
+    margin-top: 0;
+}
 /* =========================================================
    TABLET
    ========================================================= */
