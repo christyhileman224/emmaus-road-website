@@ -3,44 +3,91 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Weekly Newsletter | Emmaus Road</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Weekly Newsletter | Emmaus Road Lutheran Church</title>
 
     <meta name="description"
-          content="Read the latest Emmaus Road weekly newsletter and browse previous editions.">
+          content="Read the latest Emmaus Road Lutheran Church weekly newsletter and browse previous editions.">
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
+
 <body>
 
+
+<!-- ======================================================
+     HEADER / NAVIGATION
+     ====================================================== -->
+
 <header>
+
     <div class="container nav">
 
+        <!-- REAL EMMAUS ROAD LOGO -->
+
         <a class="brand" href="index.html">
-            EMMAUS ROAD
-            <span class="brand-cross">†</span>
+            <img
+                src="logo.png"
+                alt="Emmaus Road Lutheran Church">
         </a>
 
+
         <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#visit">Visit</a>
-            <a href="index.html#ministries">Ministries</a>
-            <a href="newsletter.html">Newsletter</a>
-            <a href="index.html#contact">Contact</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#visit">
+                Visit
+            </a>
+
+            <a href="index.html#ministries">
+                Ministries
+            </a>
+
+            <a href="newsletter.html">
+                Newsletter
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+
+            <!--
+            Replace # with the giving app URL
+            when ready.
+            -->
 
             <a class="give" href="#">
                 Give
             </a>
+
         </nav>
 
     </div>
+
 </header>
 
 
+
+<!-- ======================================================
+     MAIN CONTENT
+     ====================================================== -->
+
 <main>
+
+
+    <!-- NEWSLETTER INTRO -->
 
     <section class="section">
 
@@ -50,129 +97,79 @@
                 Emmaus Road Weekly Newsletter
             </h1>
 
-            <p style="font-size:18px; max-width:720px;">
+            <p class="newsletter-intro">
+
                 Stay connected with worship, prayer,
-                announcements, upcoming events and the life
-                of our Emmaus Road community.
+                announcements, upcoming events and the
+                life of our Emmaus Road community.
+
             </p>
+
 
 
             <!-- ==========================================
                  LATEST NEWSLETTER
+
+                 newsletters.js automatically places the
+                 newest newsletter here.
                  ========================================== -->
 
-            <div style="
-                background:white;
-                margin-top:45px;
-                padding:40px;
-                border-radius:10px;
-                box-shadow:0 8px 25px rgba(0,0,0,.08);
-            ">
-
-                <p style="
-                    color:#2f7a3e;
-                    font-weight:bold;
-                    text-transform:uppercase;
-                    margin-top:0;
-                ">
-                    Latest Edition
-                </p>
-
-                <h2 style="
-                    font-family:Georgia,serif;
-                    color:#123d29;
-                    font-size:32px;
-                    margin-bottom:8px;
-                ">
-                    Week of August 17, 2026
-                </h2>
+            <div
+                id="latest-newsletter"
+                class="latest-newsletter">
 
                 <p>
-                    Edition 23
+                    Loading the latest newsletter...
                 </p>
 
-                <a
-                    class="button"
-                    target="_blank"
-                    href="newsletters/emmaus-road-newsletter-2026-08-17.pdf">
-
-                    Read This Week's Newsletter →
-
-                </a>
-
             </div>
+
 
 
             <!-- ==========================================
                  NEWSLETTER ARCHIVE
 
-                 EACH WEEK:
-                 Copy one archive item,
-                 paste it ABOVE the previous week,
-                 then change the date and filename.
+                 newsletters.js automatically places all
+                 previous newsletters here.
                  ========================================== -->
 
-            <div style="margin-top:70px;">
+            <div class="newsletter-archive-section">
 
-                <h2 style="
-                    font-family:Georgia,serif;
-                    color:#123d29;
-                    font-size:34px;
-                ">
+                <h2 class="newsletter-archive-title">
                     Newsletter Archive
                 </h2>
 
+                <p class="newsletter-archive-description">
 
-                <!-- AUGUST 17 -->
+                    Browse previous editions of the
+                    Emmaus Road weekly newsletter.
 
-                <div style="
-                    background:white;
-                    padding:25px 30px;
-                    margin-top:20px;
-                    border-radius:8px;
-                    display:flex;
-                    justify-content:space-between;
-                    align-items:center;
-                    gap:25px;
-                    flex-wrap:wrap;
-                ">
+                </p>
 
-                    <div>
 
-                        <strong style="
-                            font-family:Georgia,serif;
-                            color:#123d29;
-                            font-size:21px;
-                        ">
-                            August 17, 2026
-                        </strong>
+                <div id="newsletter-archive">
 
-                        <div>
-                            Edition 23
-                        </div>
-
-                    </div>
-
-                    <a
-                        class="text-link"
-                        target="_blank"
-                        href="newsletters/emmaus-road-newsletter-2026-08-17.pdf">
-
-                        Read Newsletter →
-
-                    </a>
+                    <p>
+                        Loading newsletter archive...
+                    </p>
 
                 </div>
 
-
             </div>
+
 
         </div>
 
     </section>
 
+
 </main>
 
+
+
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
 
 <footer id="contact">
 
@@ -180,20 +177,33 @@
 
         <div class="footer-grid">
 
+
+            <!-- CHURCH -->
+
             <div>
 
+                <!--
+                Keeping text in the footer for now because
+                the standard logo has a white background.
+                -->
+
                 <h3>
-                    EMMAUS ROAD †
+                    EMMAUS ROAD
                 </h3>
 
                 <p>
+
                     Transformed by God's grace, we are a
-                    grateful faith community seeking to love,
-                    learn and serve together.
+                    grateful faith community seeking to
+                    love, learn and serve together.
+
                 </p>
 
             </div>
 
+
+
+            <!-- QUICK LINKS -->
 
             <div class="footer-links">
 
@@ -217,8 +227,15 @@
                     Newsletter
                 </a>
 
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
             </div>
 
+
+
+            <!-- CONTACT -->
 
             <div>
 
@@ -231,35 +248,66 @@
                     Levittown, PA 19057
                 </p>
 
+
                 <p>
+
                     <a href="tel:+12159462155">
                         (215) 946-2155
                     </a>
+
                 </p>
 
+
                 <p>
+
                     <a href="mailto:emmausroadoffice@gmail.com">
                         emmausroadoffice@gmail.com
                     </a>
+
                 </p>
 
+
                 <p>
-                    <strong>Sunday Worship:</strong>
+
+                    <strong>
+                        Sunday Worship:
+                    </strong>
+
                     10:00 AM
+
                 </p>
 
             </div>
 
+
         </div>
+
 
 
         <div class="copyright">
-            © 2026 Emmaus Road. All rights reserved.
+
+            © 2026 Emmaus Road Lutheran Church.
+            All rights reserved.
+
         </div>
+
 
     </div>
 
 </footer>
 
+
+
+<!-- ======================================================
+     NEWSLETTER SCRIPT
+
+     Reads newsletters.json and automatically builds
+     the latest newsletter and archive.
+     ====================================================== -->
+
+<script src="newsletters.js"></script>
+
+
 </body>
+
 </html>
