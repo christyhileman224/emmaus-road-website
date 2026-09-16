@@ -1,16 +1,11 @@
 // ==========================================================
-// EMMAUS ROAD - NEWSLETTER ARCHIVE
-// Reads newsletters.json and builds the newsletter page
+// EMMAUS ROAD - NEWSLETTER DATA
+// Reads newsletters.json and updates:
+// 1. Newsletter archive page
+// 2. Homepage "This Week" section
 // ==========================================================
 
 async function loadNewsletters() {
-
-    const latestContainer = document.getElementById("latest-newsletter");
-    const archiveContainer = document.getElementById("newsletter-archive");
-
-    if (!latestContainer || !archiveContainer) {
-        return;
-    }
 
     try {
 
@@ -22,97 +17,156 @@ async function loadNewsletters() {
 
         const newsletters = await response.json();
 
+
         // Sort newest first
         newsletters.sort((a, b) => {
             return new Date(b.date) - new Date(a.date);
         });
 
+
         if (newsletters.length === 0) {
-
-            latestContainer.innerHTML = `
-                <p>No newsletters are available yet.</p>
-            `;
-
-            archiveContainer.innerHTML = "";
-
             return;
         }
 
-
-        // ==================================================
-        // LATEST NEWSLETTER
-        // ==================================================
 
         const latest = newsletters[0];
 
-        latestContainer.innerHTML = `
-            <p class="newsletter-label">
-                Latest Edition
-            </p>
-
-            <h2>
-                Week of ${formatNewsletterDate(latest.date)}
-            </h2>
-
-            <p>
-                Edition ${latest.edition}
-            </p>
-
-            <a
-                class="button"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="${latest.file}">
-                Read This Week's Newsletter →
-            </a>
-        `;
-
 
         // ==================================================
-        // ARCHIVE
+        // HOMEPAGE
         // ==================================================
 
-        const archive = newsletters.slice(1);
+        const homepageDate =
+            document.getElementById("homepage-newsletter-date");
 
-        if (archive.length === 0) {
+        const homepageLink =
+            document.getElementById("homepage-newsletter-link");
 
-            archiveContainer.innerHTML = `
-                <p>No previous newsletters yet.</p>
-            `;
+        const homepageScripture =
+            document.getElementById("homepage-scripture");
 
-            return;
+        const homepageTheme =
+            document.getElementById("homepage-theme");
+
+
+        if (homepageDate) {
+
+            homepageDate.textContent =
+                `Week of ${formatNewsletterDate(latest.date)} - Edition ${latest.edition}`;
+
         }
 
 
-        archiveContainer.innerHTML = archive
-            .map(newsletter => {
+        if (homepageLink) {
 
-                return `
-                    <div class="newsletter-archive-item">
+            homepageLink.href = latest.file;
 
-                        <div>
-                            <strong>
-                                ${formatNewsletterDate(newsletter.date)}
-                            </strong>
+        }
 
-                            <div>
-                                Edition ${newsletter.edition}
-                            </div>
-                        </div>
 
-                        <a
-                            class="text-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="${newsletter.file}">
-                            Read Newsletter →
-                        </a>
+        if (homepageScripture) {
 
-                    </div>
+            homepageScripture.textContent =
+                latest.scripture || "Weekly Scripture";
+
+        }
+
+
+        if (homepageTheme) {
+
+            homepageTheme.textContent =
+                latest.theme || "";
+
+        }
+
+
+
+        // ==================================================
+        // NEWSLETTER PAGE
+        // ==================================================
+
+        const latestContainer =
+            document.getElementById("latest-newsletter");
+
+        const archiveContainer =
+            document.getElementById("newsletter-archive");
+
+
+        if (latestContainer) {
+
+            latestContainer.innerHTML = `
+                <p class="newsletter-label">
+                    Latest Edition
+                </p>
+
+                <h2>
+                    Week of ${formatNewsletterDate(latest.date)}
+                </h2>
+
+                <p>
+                    Edition ${latest.edition}
+                </p>
+
+                <a
+                    class="button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="${latest.file}">
+                    Read This Week's Newsletter →
+                </a>
+            `;
+
+        }
+
+
+        if (archiveContainer) {
+
+            const archive =
+                newsletters.slice(1);
+
+
+            if (archive.length === 0) {
+
+                archiveContainer.innerHTML = `
+                    <p>No previous newsletters yet.</p>
                 `;
 
-            })
-            .join("");
+            } else {
+
+                archiveContainer.innerHTML =
+                    archive
+                        .map(newsletter => {
+
+                            return `
+                                <div class="newsletter-archive-item">
+
+                                    <div>
+                                        <strong>
+                                            ${formatNewsletterDate(newsletter.date)}
+                                        </strong>
+
+                                        <div>
+                                            Edition ${newsletter.edition}
+                                        </div>
+                                    </div>
+
+                                    <a
+                                        class="text-link"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="${newsletter.file}">
+                                        Read Newsletter →
+                                    </a>
+
+                                </div>
+                            `;
+
+                        })
+                        .join("");
+
+            }
+
+        }
 
 
     } catch (error) {
@@ -121,14 +175,6 @@ async function loadNewsletters() {
             "Emmaus Road newsletter error:",
             error
         );
-
-        latestContainer.innerHTML = `
-            <p>
-                The latest newsletter is temporarily unavailable.
-            </p>
-        `;
-
-        archiveContainer.innerHTML = "";
 
     }
 
@@ -143,7 +189,9 @@ async function loadNewsletters() {
 
 function formatNewsletterDate(dateString) {
 
-    const date = new Date(dateString + "T00:00:00");
+    const date =
+        new Date(dateString + "T00:00:00");
+
 
     return date.toLocaleDateString(
         "en-US",
