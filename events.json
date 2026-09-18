@@ -1,9 +1,30 @@
 [
-{
-  "date": "2026-09-27",
-  "title": "Church Council / Transition Meeting",
-  "time": "7:00 PM",
-  "details": "via Zoom",
-  "type": "meeting"
-}
+  {
+    "date": "2026-09-22",
+    "title": "Zoom Confirmation Class",
+    "time": "6:00 PM - 8:00 PM",
+    "details": "via Zoom",
+    "type": "class"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Church Council Meeting",
+    "time": "Following Worship",
+    "details": "No Bible Study this Sunday",
+    "type": "meeting"
+  },
+  {
+    "date": "2026-10-04",
+    "title": "Shared Meal Planning Meeting",
+    "time": "Following Worship",
+    "details": "",
+    "type": "meeting"
+  },
+  {
+    "date": "2026-10-13",
+    "title": "Shared Meal Program",
+    "time": "",
+    "details": "Program restarts - held the 2nd Tuesday of every month",
+    "type": "service"
+  }
 ]
