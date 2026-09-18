@@ -42,6 +42,9 @@ async function loadNewsletters() {
         const homepageLink =
             document.getElementById("homepage-newsletter-link");
 
+        const homepageExcerpt =
+            document.getElementById("homepage-scripture-excerpt");
+
         const homepageScripture =
             document.getElementById("homepage-scripture");
 
@@ -60,6 +63,14 @@ async function loadNewsletters() {
         if (homepageLink) {
 
             homepageLink.href = latest.file;
+
+        }
+
+
+        if (homepageExcerpt) {
+
+            homepageExcerpt.textContent =
+                latest.excerpt || "";
 
         }
 
@@ -184,7 +195,7 @@ async function loadNewsletters() {
 
 // ==========================================================
 // FORMAT DATE
-// 2026-08-31 -> August 31, 2026
+// 2026-09-14 -> September 14, 2026
 // ==========================================================
 
 function formatNewsletterDate(dateString) {
