@@ -878,7 +878,441 @@ footer a {
     }
 
 } 
+/* =========================================================
+   MINISTRIES PAGE
+   ========================================================= */
 
+.ministries-hero {
+    background:
+        linear-gradient(
+            rgba(14, 62, 43, 0.78),
+            rgba(14, 62, 43, 0.78)
+        ),
+        url("front.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    padding: 95px 0 90px;
+}
+
+.ministries-hero-content {
+    max-width: 760px;
+}
+
+.ministries-hero .eyebrow {
+    margin: 0 0 10px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ministries-hero h1 {
+    margin: 0 0 18px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(48px, 7vw, 72px);
+    line-height: 1.05;
+}
+
+.ministries-hero p {
+    max-width: 700px;
+
+    margin-bottom: 0;
+
+    font-size: 23px;
+    line-height: 1.5;
+}
+
+
+/* Main ministry sections */
+
+.ministry-feature {
+    padding: 85px 0;
+
+    background: #ffffff;
+}
+
+.ministry-feature-alt {
+    background: var(--cream);
+}
+
+
+/* Brass ensemble */
+
+.ministry-feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.15fr);
+
+    gap: 65px;
+
+    align-items: start;
+}
+
+.ministry-copy h2 {
+    margin: 0;
+
+    color: var(--green-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 42px;
+    line-height: 1.12;
+}
+
+.ministry-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    margin-bottom: 10px;
+}
+
+.ministry-icon {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f0e5;
+
+    color: var(--green-dark);
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.ministry-category {
+    margin: 0 0 6px;
+
+    color: var(--green);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.ministry-tagline {
+    margin:
+        14px 0
+        24px;
+
+    color: var(--green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+    font-style: italic;
+}
+
+.ministry-copy p {
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.ministry-invite {
+    margin-top: 30px;
+
+    padding: 22px 24px;
+
+    background: #edf4eb;
+
+    border-radius: 10px;
+}
+
+.ministry-invite strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--green-dark);
+
+    font-size: 18px;
+}
+
+.ministry-invite p {
+    margin: 0;
+}
+
+
+/* Brass photos */
+
+.ministry-gallery {
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        0.7fr;
+
+    gap: 18px;
+}
+
+.ministry-gallery img {
+    display: block;
+
+    width: 100%;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, 0.10);
+}
+
+.ministry-main-photo {
+    grid-column: 1 / -1;
+
+    height: 420px;
+}
+
+.ministry-secondary-photo {
+    grid-column: 2;
+
+    height: 215px;
+}
+
+
+/* Shared Meal */
+
+.shared-meal-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.75fr)
+        minmax(0, 1.25fr);
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+.shared-meal-visual {
+    min-height: 380px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 45px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f6ead3,
+            #fffaf1
+        );
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, 0.06);
+}
+
+.shared-meal-symbol {
+    margin-bottom: 18px;
+
+    font-size: 80px;
+}
+
+.shared-meal-visual p {
+    max-width: 280px;
+
+    margin: 0;
+
+    color: #6d562b;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 25px;
+    line-height: 1.35;
+}
+
+
+/* More Ministries */
+
+.more-ministries {
+    padding: 65px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #eef4e9,
+            #f7faf4
+        );
+}
+
+.more-ministries-content {
+    display: grid;
+
+    grid-template-columns: auto 1fr;
+
+    gap: 28px;
+
+    align-items: start;
+}
+
+.more-ministries-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dcebd5;
+
+    font-size: 32px;
+}
+
+.more-ministries h2 {
+    margin:
+        0 0
+        12px;
+
+    color: var(--green-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 36px;
+}
+
+.more-ministries p {
+    max-width: 800px;
+
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MINISTRIES - TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .ministry-feature-grid,
+    .shared-meal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ministry-gallery {
+        margin-top: 10px;
+    }
+
+    .shared-meal-visual {
+        min-height: 300px;
+    }
+
+}
+
+
+/* =========================================================
+   MINISTRIES - MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .ministries-hero {
+        padding: 70px 0 65px;
+    }
+
+    .ministries-hero h1 {
+        font-size: 46px;
+    }
+
+    .ministries-hero p {
+        font-size: 20px;
+    }
+
+    .ministry-feature {
+        padding: 65px 0;
+    }
+
+    .ministry-copy h2 {
+        font-size: 34px;
+    }
+
+    .ministry-heading {
+        gap: 14px;
+    }
+
+    .ministry-icon {
+        width: 50px;
+        height: 50px;
+
+        flex-basis: 50px;
+
+        font-size: 25px;
+    }
+
+    .ministry-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .ministry-main-photo,
+    .ministry-secondary-photo {
+        grid-column: 1;
+
+        height: auto;
+    }
+
+    .shared-meal-visual {
+        min-height: 250px;
+
+        padding: 35px 25px;
+    }
+
+    .more-ministries-content {
+        grid-template-columns: 1fr;
+    }
+
+}
 
 /* =========================================================
    MOBILE
