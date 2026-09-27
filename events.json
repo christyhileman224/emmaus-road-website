@@ -27,4 +27,18 @@
     "details": "Program restarts - held the 2nd Tuesday of every month",
     "type": "service"
   }
+  {
+  "date": "2026-10-04",
+  "title": "Shared Meal Planning Meeting",
+  "time": "Following Worship",
+  "details": "Help us prepare for the upcoming Shared Meal Ministry.",
+  "type": "meeting"
+},
+{
+  "date": "2026-10-11",
+  "title": "Blessing of the Animals",
+  "time": "During 10:00 AM Worship",
+  "details": "Bring your animals or a photo of your animal for a special blessing.",
+  "type": "worship"
+}
 ]
